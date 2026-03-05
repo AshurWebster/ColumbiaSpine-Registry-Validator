@@ -5,7 +5,13 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import IsolationForest
 
-st.title("Clinical Data Anomaly Detection Tool")
+st.set_page_config(
+    page_title="Columbia Spine Registry Validation Tool",
+    layout="wide"
+)
+
+st.title("Columbia Spine Registry Data Validation Tool")
+st.caption("Automated rule-based and statistical validation for clinical registry data")
 
 st.write("Upload a CSV file to detect statistically anomalous records.")
 
@@ -309,4 +315,5 @@ if uploaded_file is not None:
                         data=f,
                         file_name="rule_validation_results.xlsx",
                         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+
                     )
